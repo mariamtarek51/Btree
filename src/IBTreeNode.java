@@ -10,7 +10,7 @@ public interface   IBTreeNode<K  extends    Comparable<K>,  V>{
     /*return isLeaf if the node is leaf or not */
     boolean isLeaf();
 
-    /*@paramisLeaf*/
+    /*@param isLeaf*/
     void setLeaf(boolean isLeaf);
 
     /* @return  the keys  return  the list of keys of the given node. */
