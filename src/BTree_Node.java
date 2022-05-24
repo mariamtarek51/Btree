@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class BTree_Node implements IBTreeNode {
+public class BTree_Node <K extends Comparable<K>, V> implements IBTreeNode<K, V> {
     private int T;
-    List<Comparable> KEYS= new ArrayList<>(2*T-1);
-    List<Object> VALUES=new ArrayList<>();
-    List<IBTreeNode<Comparable, Object>> CHILDREN = new ArrayList<>(2*T);
+    List<K> KEYS= new ArrayList<>(2*T-1);
+    List<V> VALUES=new ArrayList<>();
+    List<IBTreeNode<K, V>> CHILDREN = new ArrayList<>(2*T);
     boolean leaf = true;
 
     @Override
@@ -24,35 +24,35 @@ public class BTree_Node implements IBTreeNode {
     public void setLeaf(boolean isLeaf){
         this.leaf=true;
     }
-    public List<Comparable> getkeys(){
+    public List<K> getkeys(){
         return this.KEYS;
     }
 
     @Override
     public void setKeys(List keys) {
         for(int i=0;i<keys.size();i++)
-            this.KEYS.add((Comparable) keys.get(i));
+            this.KEYS.add((K) keys.get(i));
     }
 
-    public List<IBTreeNode<Comparable, Object>> getChildren(){
+    public List<IBTreeNode<K, V>> getChildren(){
         return this.CHILDREN;
     }
 
     @Override
     public void setChildren(List children) {
         for(int i=0;i<children.size();i++)
-            this.CHILDREN.add((IBTreeNode<Comparable, Object>) children.get(i));
+            this.CHILDREN.add((IBTreeNode<K, V>) children.get(i));
     }
 
 
-    public List<Object> getValues(){
+    public List<V> getValues(){
         return this.VALUES;
     }
 
     @Override
     public void setValues(List values) {
         for(int i=0;i<values.size();i++)
-            this.VALUES.add( values.get(i));
+            this.VALUES.add((V) values.get(i));
 
     }
 
