@@ -10,7 +10,9 @@ public class BTree_Node <K extends Comparable<K>, V> implements IBTreeNode<K, V>
 
     @Override
     public int getNumOfKeys() {
-        return 0;
+
+
+        return KEYS.size();
     }
 
     @Override
